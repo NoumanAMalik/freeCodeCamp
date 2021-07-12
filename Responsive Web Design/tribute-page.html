@@ -1,1 +1,63 @@
-<h1>Hello World</h1>
+<!--  
+    TODO: 7, 8, 9
+-->
+
+<!DOCTYPE html>
+<style>
+    
+    .picture {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .title {
+        grid-area: title;
+    }
+    .image {
+        grid-area: picture;
+        background-color: blanchedalmond;
+        display: block;
+        margin-left: 103px; 
+    }
+    <!--* Codepen was not excepting the file without this type of centering-->
+    .body {
+        grid-area: body;
+    }
+
+    .layout {
+        background: linear-gradient(35deg, #ccffff, #ffcccc);
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 1fr 4fr 7fr;
+        grid-gap: 10px;
+        grid-template-areas: 
+            ". title ."
+            ". picture ."
+            ". body .";
+    }
+</style>
+
+<html>
+    <body id="main" class="layout">
+        <div class="title">
+            <h1 id="title">Dr. Norman Borlaug</h1>
+            <br>
+            <p>The man who saved a billion lives</p>
+        </div>
+        <div id="img-div" class="image">
+            <img id="image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute-page-main-image.jpg" alt="A Picture of Dr. Norman Borlaug" class="picture">
+            <br>
+            <p id="img-caption">Dr. Norman Borlaug, third from the left, trains biologists in Mexico on how to increase wheat yeilds - part of his life-long war on hunger.</p>
+        </div>
+        <div id="tribute-info" class="body">
+            <h2>Here's a timeline of Dr. Borlaug's life:</h2>
+            <br>
+            <ul>
+                <li><b>1914</b> - Born in Cresco, Iowa</li>
+                <li><b>1933</b> - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
+            </ul>
+            <p><b>Here is more information on Dr. Norman Borlaug at his <a id="tribute-link" target="_blank" href="https://en.wikipedia.org/wiki/Norman_Borlaug">Wikipedia Page</a></b></p>
+        </div>
+    </body>
+</html>
