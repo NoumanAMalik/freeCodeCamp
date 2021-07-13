@@ -8,15 +8,25 @@
 <style>
     #content {
         grid-area: content;
+        background: linear-gradient(0deg, #ccffff, #ffcccc);
+        text-align: center;
     }
 
-    .header {
-        background: linear-gradient(35deg, #ccffff, #ffcccc);
+    input[type=text], input[type=email], input[type=number], textarea, select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;  
     }
 
     .container {
+        background: linear-gradient(0deg, #ccffff, #ffcccc);
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 100%;
         grid-gap: 10px;
         grid-template-areas: 
             ". content .";
