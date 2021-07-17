@@ -1,22 +1,27 @@
 <!-- 
-    TODO: User Story #4: I can see at least three clickable elements inside the nav element, each with the class nav-link.
-
-    TODO: User Story #5: When I click a .nav-link button in the nav element, I am taken to the corresponding section of the landing page.
-
-    TODO: User Story #14: My product landing page should have at least one media query.
-
-    TODO: User Story #15: My product landing page should utilize CSS flexbox at least once.
+    This website is currently a work in progress
  -->
 <!DOCTYPE html>
 
 <style>
-
+    header {
+        display: flex;
+    }
+    @media (max-width: 300px) {
+        header {
+            flex-wrap: wrap;
+        }
+    }
 </style>
 
 <html>
     <header id="header">
         <img id="header-img" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png" alt="A picture of Original Trombones company logo">
         <nav id="nav-bar">
+            <p><a href="#info" class="nav-link">Features</a></p>
+            <p><a href="#price" class="nav-link">Pricing</a></p>
+            <p><a href="#demo" class="nav-link">Demo</a></p>
+
             <!-- TODO: Add three clickable elements here for navigation -->
         </nav>
     </header>
@@ -26,6 +31,9 @@
             <iframe id="video" src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
         </div>
         <div class="information">
+            <div id="info"></div>
+            <div id="price"></div>
+            <div id="demo"></div>
             <!-- TODO: Add different sections of information -->
         </div>
         <div>
