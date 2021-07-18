@@ -1,0 +1,125 @@
+<!-- 
+    ! Missing CSS
+ -->
+
+<!DOCTYPE html>
+
+<style>
+    body {
+        display: flex;
+    }
+    nav {
+        position: fixed;
+    }
+    main {
+        margin-left: 200px;
+    }
+    @media (max-width: 300px) {
+        body {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+
+<html>
+    <body>
+        <nav id="navbar">
+            <header>
+                <h2>C Documentation</h2>
+            </header>
+            <p><a class="nav-link" href="#Introduction_to_C">Introduction to C</a></p>
+            <p><a class="nav-link" href="#Hello_World">Hello World</a></p>
+            <p><a class="nav-link" href="#For_Loop">For Loop</a></p>
+            <p><a class="nav-link" href="#While_Loop">While Loop</a></p>
+            <p><a class="nav-link" href="#Function">Function</a></p>
+            <p><a class="nav-link" href="#Thank_You">Thank You</a></p>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_to_C">
+                <header>
+                    <h2>Introduction to C</h2>
+                </header>
+                <p>C is a general purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. It was designed to be compiled to provide low-level access to memory and language constructs that map efficiently to machine instructions, all with minimal runtime support. According to TIOBE, as of July 2021, C is the most popular programming language. Some advantages of C are: </p>
+                <ul>
+                    <li>It is a building block for many other programming languages such as Python, Java, C++, and more.</li>
+                    <li>It is a very powerful and efficient language</li>
+                    <li>It is a portable language, which means it can run on any machine with minimal setup</li>
+                    <li>Its built in functions are very helpful when building a program</li>
+                    <li>It is a structured programming language which allows for complex problems having smaller simple functions for easy testing and maintenance</li>
+                </ul>
+            </section>
+            <section class="main-section" id="Hello_World">
+                <header>
+                    <h2>Hello World</h2>
+                </header>
+                <p>Writing Hello World in C is pretty simple and self explanatory</p>
+                <code>
+                    <pre>
+    #include &ltstdio.h&gt
+
+    int main() {
+        printf("Hello World\n");
+    }
+                    </pre>
+                </code>
+                <p>Okay now lets take some time to understand what is going on in this snippet of code. <code>#include &ltstdio.h&gt</code> is a header file which contains function definitions for all input and output functions such as <code>printf()</code> which we used to print text to the terminal/command line. Next, <code>int main() {...}</code> is the main function in which the code starts to run in. When you run a program, the computer goes to the main function and then just starts at the top and works its way down, doing everything that it was coded to do. Then <code>printf("...")</code> prints whatever is in the quotations.</p>
+            </section>
+            <section class="main-section" id="For_Loop">
+                <header>
+                    <h2>For Loop</h2>
+                </header>
+                <p>For loops are a very important part of any programming language, not just C. It allows for tasks to be repeated however long you would like. Below is an example of a for loop.</p>
+                <code>
+                    <pre>
+    for (int i = 0; i <= 100; i ++) {
+        printf("%d\n", i);
+    }
+                    </pre>
+                </code>       
+                <p>Now lets break down what is going on starting with the first line, <code>for (int i = 0; i <= 100; i ++)</code>. Okay so there are a lot of things going on in this section of code. First of all is the <code>for (...; ...; ...)</code> which is how to properly write a for loop. Now inside the parenthesis of the for loop there are 3 different sections. In the first section we declare a varibale which will only work inside the for loop section of the code because thats what the scope of the variable is. Then the second section of the for loop is to set a rule for how long you would like the for loop to actually loop. And then the third section of the for loop is to give a command for what to do to the declared variable after every loop. Now lets look at the different sections that I put in the for loop. In the first section I declared the variable i and I set that to 0, and then in the second section I made the rule that as long as i is less than or equal to 100, to run the loop, and the third section was that after every loop to add 1 to the value of i. Then in the loop I am printing i. So when the program is run, the numbers 0 to 100 is printed.</p>     
+            </section>
+            <section class="main-section" id="While_Loop">
+                <header>
+                    <h2>While Loop</h2>
+                </header>
+                <p>While loops are another type of loop, but they are fundamentally different from for loops. The biggest difference is that for while loops you don't know specifically how many times you want to loop, compared to knowing exactly how many times to loop in for loops.</p>
+                <code>
+                    <pre>
+    int i = 100;
+    int count = 0;
+    while (i > 3) {
+        i -= 3;
+        count++;
+    }
+    printf("%d\n", count);
+                    </pre>
+                </code>
+                <p>Now lets break down what is going on. The first 2 lines in the code snippet are not necessary, they are just there for the example. In while loops, they are structured like this, <code>while (...)</code>. The only parameter while loops need are which condition that needs to be false to end the loop. In the example, the while loops goes until i is less than 3, which would be calculating how many times 3 can fit inside 100 without decimals. Again, while loops are great for loops where you dont know how many times you need to loop before hand, and there are many use cases where while loops would be better than for loops.</p>
+            </section>
+            <section class="main-section" id="Function">
+                <header>
+                    <h2>Function</h2>
+                </header>
+                <p>Lets now see how to make a function in C: </p>
+                <code>
+                    <pre>
+    int calculate_product(int x, int y) {
+        return x * y;
+    }
+
+    int main() {
+        printf("%d", calculate_product(3, 3));
+    }
+                    </pre>
+                </code>
+                <p>When making a function it is important to remember that since <code>int main() {...}</code> is a function, you cannot make a function inside of it, the function should be made outside of it. Now lets look at the first line, <code>int calculate_product(int x, int y)</code>. The int in the beginning is declaring the type of what the function will return, which in this case would be an integer. After that, then there is the name of the function that can be called anywhere in the code. Then after the name, in the paranthesis are the parameters of the function which basically mean what type of information the function needs to do its job. In this case, it would be 2 integers that the function names x and y. Then inside the function the return is just how the function outputs the information.</p>    
+            </section>
+            <section class="main-section" id="Thank_You">
+                <header>
+                    <h2>Thank You</h2>
+                </header>
+                <p>Thank you for reading my article, and I hope that you learned something new.</p>
+            </section>
+        </main>
+    </body>
+</html>
